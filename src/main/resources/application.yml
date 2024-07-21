@@ -1,0 +1,72 @@
+server:
+  port: 9090
+  # 指定接口全局api
+  servlet:
+    context-path: /api
+    session:
+      # cookie 作用域
+      cookie:
+        domain: localhost
+
+spring:
+  profiles:
+    active: prod
+  application:
+    name: ziye-yupao
+  # todo mysql 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://your_host:your_port/database
+    username: root
+    password: your_password
+    hikari:
+      max-lifetime: 30000
+      maximum-pool-size: 10
+  # todo redis 配置
+  redis:
+    port: your_port
+    host: your_host
+    database: 1
+    password: your_password
+  # session
+  session:
+    # 失效时间
+    timeout: 604800
+    # 在 redis 读写 session
+    store-type: redis
+
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+  # todo 邮箱配置
+  mail:
+    host: smtp.qq.com
+    username: your_username
+    password: your_password
+
+  servlet:
+    # 文件上传配置
+    multipart:
+      # 上传的单个文件最大为 2MB
+      max-file-size: 2097152
+
+mybatis-plus:
+  configuration:
+    # 关闭下划线转驼峰映射
+    map-underscore-to-camel-case: false
+    # 控制台输出SQL语句
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+zicai:
+  # todo 阿里云OSS对象存储配置
+  alioss:
+    endpoint: your_endpoint
+    access-key-id: your_access-key-id
+    access-key-secret: your_access-key-secret
+    bucket-name: your_bucket-name

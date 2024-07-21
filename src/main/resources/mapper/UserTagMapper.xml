@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ziye.yupao.mapper.UserTagMapper">
+
+    <resultMap id="BaseResultMap" type="com.ziye.yupao.model.domain.UserTag">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="tagname" column="tagName" jdbcType="VARCHAR"/>
+            <result property="userid" column="userId" jdbcType="BIGINT"/>
+            <result property="parentid" column="parentId" jdbcType="BIGINT"/>
+            <result property="isparent" column="isParent" jdbcType="TINYINT"/>
+            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="updatetime" column="updateTime" jdbcType="TIMESTAMP"/>
+            <result property="isdelete" column="isDelete" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,tagName,userId,
+        parentId,isParent,createTime,
+        updateTime,isDelete
+    </sql>
+</mapper>

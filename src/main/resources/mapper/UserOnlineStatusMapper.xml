@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ziye.yupao.mapper.UserOnlineStatusMapper">
+
+    <resultMap id="BaseResultMap" type="com.ziye.yupao.model.domain.UserOnlineStatus">
+            <id property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="isOnline" column="is_online" jdbcType="TINYINT"/>
+            <result property="lastOnline" column="last_online" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,is_online,last_online
+    </sql>
+</mapper>

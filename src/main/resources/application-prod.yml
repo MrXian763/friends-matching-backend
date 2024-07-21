@@ -1,0 +1,7 @@
+# todo 生产环境配置
+server:
+  servlet:
+    session:
+      cookie:
+        domain: your_domain.com  # 设置为主域名，以支持所有子域名
+        path: /              # 设置 Cookie 的路径
